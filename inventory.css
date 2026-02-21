@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #061a2b, #020617);
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  height: 70px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: white;
+}
+
+/* MAIN */
+.main {
+  padding: 40px;
+}
+
+.main h1 {
+  margin-bottom: 25px;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 30px;
+}
+
+/* FORM */
+.form-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+.form-card button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg,#1089d3,#12b1d1);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+thead {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+tbody tr {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* BADGES */
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.normal {
+  background: rgba(34,197,94,0.2);
+  color: #22c55e;
+}
+
+.low {
+  background: rgba(234,179,8,0.2);
+  color: #facc15;
+}
+
+.critical {
+  background: rgba(239,68,68,0.2);
+  color: #ef4444;
+}
+/* ===== BACK BUTTON ===== */
+.back-row {
+  margin-bottom: 15px;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: all 0.25s ease;
+}
+
+.back-btn:hover {
+  background: rgba(34,193,195,0.15);
+  border-color: rgba(34,193,195,0.4);
+  transform: translateY(-1px);
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Billing — MedSupply</title>
+  <link rel="stylesheet" href="billing.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">💊 MedSupply</div>
+  <ul class="nav-links">
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="inventory.html">Inventory</a></li>
+    <li><a class="active" href="billing.html">Billing</a></li>
+  </ul>
+</nav>
+
+<main class="main">
+
+  <div class="back-row">
+    <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+  </div>
+
+  <h1>Customer Billing</h1>
+
+  <!-- Billing Card -->
+  <div class="card bill-card">
+    <h2>Generate Bill</h2>
+
+    <select id="billMedicine"></select>
+    <input id="billQty" type="number" placeholder="Quantity" />
+
+    <button id="billBtn">🧾 Generate Bill</button>
+
+    <div id="billOutput"></div>
+  </div>
+
+</main>
+
+<script src="billing.js"></script>
+</body>
+</html>

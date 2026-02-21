@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedSupply AI — Smart Drug Supply Chain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div id="toast-container"></div>
+
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">💊</span>
+                <span class="logo-text">MedSupply</span>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="billing.html">Billing</a></li>
+                <li><a href="#">Alerts</a></li>
+                <li><a href="#">Admin</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="notification-wrapper" id="nav-notifications">
+                    <span class="bell-icon">🔔</span>
+                    <span class="badge pulse-animation" id="notification-badge">3</span>
+                </div>
+                <div class="profile">
+                    <div class="avatar">RK</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-layout">
+        
+        <section class="kpi-grid" id="kpi-section">
+            <div class="glass-card kpi-card skeleton-wrapper">
+                <div class="skeleton"></div>
+                <div class="kpi-content hidden">
+                    <h3>Total Medicines</h3>
+                    <div class="kpi-value" data-target="12450">0</div>
+                    <p class="kpi-trend positive">+4.2% from last week</p>
+                </div>
+            </div>
+            <div class="glass-card kpi-card skeleton-wrapper">
+                <div class="skeleton"></div>
+                <div class="kpi-content hidden">
+                    <h3>Low Stock Alerts</h3>
+                    <div class="kpi-value warning" data-target="42">0</div>
+                    <p class="kpi-trend negative">-2 resolved today</p>
+                </div>
+            </div>
+            <div class="glass-card kpi-card skeleton-wrapper">
+                <div class="skeleton"></div>
+                <div class="kpi-content hidden">
+                    <h3>Hospitals Connected</h3>
+                    <div class="kpi-value" data-target="156">0</div>
+                    <p class="kpi-trend positive">+3 new onboarded</p>
+                </div>
+            </div>
+            <div class="glass-card kpi-card skeleton-wrapper">
+                <div class="skeleton"></div>
+                <div class="kpi-content hidden">
+                    <h3>Predicted Demand Spike</h3>
+                    <div class="kpi-value critical" data-target="18">0</div>
+                    <p class="kpi-trend neutral">Next 7 days</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="main-grid">
+            <div class="left-col">
+                <section class="glass-card chart-section">
+                    <div class="section-header">
+                        <h2>AI Demand Prediction</h2>
+                        <select class="glass-select">
+                            <option>Last 7 Days vs Next 7 Days</option>
+                            <option>30 Day Forecast</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="demandChart"></canvas>
+                    </div>
+                </section>
+
+                <section class="glass-card table-section">
+                    <div class="section-header">
+                        <h2>Live Inventory Status</h2>
+                        <div class="table-controls">
+                            <input type="text" id="table-search" class="glass-input" placeholder="Search medicine or location...">
+                            <button class="glass-btn outline">Filter</button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table id="inventory-table">
+                            <thead>
+                                <tr>
+                                    <th data-sort="name">Medicine Name <span class="sort-icon">↕</span></th>
+                                    <th data-sort="location">Location <span class="sort-icon">↕</span></th>
+                                    <th data-sort="stock">Stock <span class="sort-icon">↕</span></th>
+                                    <th data-sort="status">Status <span class="sort-icon">↕</span></th>
+                                    <th data-sort="lastUpdated">Last Updated <span class="sort-icon">↕</span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="inventoryTableBody"></tbody>
+                                </tbody>
+                        </table>
+                        <div id="table-empty" class="empty-state hidden">
+                            <p>No medicines found matching your criteria.</p>
+                        </div>
+                    </div>
+
+                    <div class="pagination" id="pagination">
+                        </div>
+                </section>
+            </div>
+
+            <div class="right-col">
+                <section class="glass-card alerts-section">
+                    <div class="section-header">
+                        <h2>🚨 Smart Alerts</h2>
+                        <span class="badge" id="alert-counter">0</span>
+                    </div>
+                    <div class="alerts-container" id="alerts-container">
+                        </div>
+                        <div class="alert-empty">No active alerts</div>
+                </section>
+
+                <section class="glass-card redistribution-section">
+                    <div class="section-header">
+                        <h2>🔄 AI Redistribution</h2>
+                    </div>
+                    <div class="redistribution-container" id="redistribution-container">
+                        </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
+    <!-- From Uiverse.io by vinodjangid07 --> 
+<button class="button">
+  <svg class="svgIcon" viewBox="0 0 384 512">
+    <path
+      d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+    ></path>
+  </svg>
+</button>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const backToTopBtn = document.querySelector(".button");
+
+    if (!backToTopBtn) return;
+
+    backToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+    });
+});
+</script>
+</body>
+</html>

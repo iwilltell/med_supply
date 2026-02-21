@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #061a2b, #020617);
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  height: 70px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: white;
+}
+
+/* MAIN */
+.main {
+  padding: 40px;
+}
+
+.back-row {
+  margin-bottom: 15px;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  background: rgba(255,255,255,0.08);
+}
+
+/* CARD */
+.card {
+  max-width: 500px;
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.card input,
+.card select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+.card button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg,#1089d3,#12b1d1);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#billOutput {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+}

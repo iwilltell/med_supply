@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory — MedSupply</title>
+  <link rel="stylesheet" href="inventory.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">💊 MedSupply</div>
+  <ul class="nav-links">
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a class="active" href="inventory.html">Inventory</a></li>
+    <li><a href="billing.html">Billing</a></li>
+  </ul>
+</nav>
+
+<main class="main">
+
+  <!-- ✅ NEW: Back button -->
+  <div class="back-row">
+    <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+  </div>
+
+  <h1>Inventory Management</h1>
+
+  <!-- Add Medicine Card -->
+  <div class="card form-card">
+    <h2>Add Medicine</h2>
+
+    <input id="medName" placeholder="Medicine Name" />
+    <input id="medPrice" type="number" placeholder="Price ₹" />
+    <input id="medStock" type="number" placeholder="Stock Quantity" />
+    <input id="medThreshold" type="number" placeholder="Low Stock Alert Level" />
+
+    <button id="addBtn">➕ Add Medicine</button>
+  </div>
+
+  <!-- Live Table -->
+  <div class="card table-card">
+    <h2>Live Inventory</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Medicine</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Status</th>
+          <th>Updated</th>
+        </tr>
+      </thead>
+      <tbody id="inventoryBody"></tbody>
+    </table>
+  </div>
+
+</main>
+
+<script src="inventory.js"></script>
+</body>
+</html>
